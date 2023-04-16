@@ -1,0 +1,39 @@
+name: Publish multi-cloud-utils to Test PyPI
+
+on:
+  push:
+    tags:
+      - test-*
+      - v*
+
+jobs:
+  pypi_test_release:
+    name: Publish to Test PyPI
+    if: startswith(github.ref, 'refs/tags/test-')
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v3.5.2
+    - name: Publish python poetry package
+      uses: JRubics/poetry-publish@v1.16
+      with:
+        pypi_token: ${{ secrets.TEST_PYPI_API_TOKEN }}
+        repository_name: "testpypi"
+        repository_url: "https://test.pypi.org/legacy/"
+
+  pypi_release:
+    name: Publish to PyPI
+    if: startswith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+    - name: Exit if not main branch
+      if: endswith(github.ref, 'main') == false
+      run: |
+        echo "Not on main branch, exiting"
+        exit -1
+    - name: Check out the repository
+      uses: actions/checkout@v3.5.2
+    - name: Publish python poetry package
+      uses: JRubics/poetry-publish@v1.16
+      with:
+        pypi_token: ${{ secrets.PYPI_API_TOKEN }}

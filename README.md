@@ -1,2 +1,2 @@
-# multi-cloud-utils-python
-Helpful python utility functions for AWS, Azure and GCP
+# multi_cloud_utils
+A python package with helpful utility functions for AWS, GCP, Azure and other cloud providers
