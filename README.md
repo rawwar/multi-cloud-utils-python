@@ -9,14 +9,14 @@ Multi-Cloud-Utils-Python is an open source package with an aim to reduce re-deve
 utility functions related to cloud providers. As of now, it aims to support AWS, GCP and
 Azure.
 
-## <u>Installation</u>
+## Installation
 
 
 run the following command to install the package
 
 `pip install multi-cloud-utils`
 
-## <u>Usage</u>
+## Usage
 
 
 using multi-cloud-utils in your code
