@@ -1,8 +1,10 @@
+*******
 Roadmap
-#######
+*******
 
-Planned features for the next release:
-####################################
+Planned features for the next release(0.1.1):
+#############################################
+
 - Support basic authentication with AWS, Azure and GCP
 - Ability to upload files, folders to cloud storage
 - Ability to download files, folders to local path
