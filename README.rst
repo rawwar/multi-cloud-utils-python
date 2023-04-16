@@ -16,9 +16,9 @@ Azure.
 Installation
 ============
 
-run the following command to install the package
+run the following command to install the package::
 
-`pip install multi-cloud-utils`
+    pip install multi-cloud-utils
 
 Usage
 #####
